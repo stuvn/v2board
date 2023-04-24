@@ -37,6 +37,7 @@ class KnowledgeController extends Controller
                 ),
                 $knowledge['body']
             );
+            $this->apple($knowledge['body']);
             return response([
                 'data' => $knowledge
             ]);
@@ -69,5 +70,51 @@ class KnowledgeController extends Controller
                 $body = str_replace($accessData, '<div class="v2board-no-access">'. __('You must have a valid subscription to view content in this area') .'</div>', $body);
             }
         }
+    }
+    private function apple(&$body)
+    {
+		try{
+            // 配合 https://github.com/pplulee/appleid_auto 使用
+            // 分享页密码若没有请留空
+            // 前端变量 {{apple_idX}} {{apple_pwX}} {{apple_statusX}} {{apple_timeX}}  X为从0开始的数字序号
+            $req = json_decode($this->api_request_curl("https://www.wkao.in/api/share.php?share_link=appleid"), true);
+            $accounts = $req["accounts"];
+            for ($i=0;$i<sizeof($accounts);$i++) {
+                $body = str_replace("{{apple_id$i}}", $accounts[$i]["username"], $body);
+                $body = str_replace("{{apple_pw$i}}", $accounts[$i]["password"], $body);
+                $body = str_replace("{{apple_status$i}}", $accounts[$i]["status"]?"正常":"异常", $body);
+                $body = str_replace("{{apple_time$i}}", $accounts[$i]["last_check"], $body);
+            }
+		}catch (\Exception $error) {
+           for ($i=0;$i<10;$i++) {
+                $body = str_replace("{{apple_id$i}}", "获取失败", $body);
+                $body = str_replace("{{apple_pw$i}}", "获取失败", $body);
+                $body = str_replace("{{apple_status$i}}", "获取失败", $body);
+                $body = str_replace("{{apple_time$i}}", "获取失败", $body);
+           }
+        }
+    }
+    
+    private function api_request_curl($url) {
+        if (empty($url)) return '';
+        
+        $curl = curl_init();
+        curl_setopt($curl,CURLOPT_URL, $url);
+        curl_setopt($curl,CURLOPT_TIMEOUT, 30);
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Accept: application/json, text/plain, */*'
+        ));
+    
+        $result = curl_exec($curl);
+        if($result === false){
+            throw new Exception('Http request message :'.curl_error($curl));
+        }
+    
+        curl_close($curl);
+        return $result;
     }
 }

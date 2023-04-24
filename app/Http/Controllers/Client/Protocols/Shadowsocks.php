@@ -52,7 +52,9 @@ class Shadowsocks
             "server" => $server['host'],
             "server_port" => $server['port'],
             "password" => $user['uuid'],
-            "method" => $server['cipher']
+            "method" => $server['cipher'],
+	    "obfs" => 'http',
+	    "obfs-host" => 'www.apple.com'
         ];
         return $config;
     }

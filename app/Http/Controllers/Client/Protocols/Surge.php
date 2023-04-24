@@ -94,7 +94,9 @@ class Surge
             "encrypt-method={$server['cipher']}",
             "password={$password}",
             'tfo=true',
-            'udp-relay=true'
+            'udp-relay=true',
+	    'obfs=http',
+	    'obfs-host=www.apple.com'
         ];
         $config = array_filter($config);
         $uri = implode(',', $config);

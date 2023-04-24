@@ -99,6 +99,9 @@ class Clash
         $array['cipher'] = $server['cipher'];
         $array['password'] = $uuid;
         $array['udp'] = true;
+        $array['plugin'] = 'obfs';
+	$array['plugin-opts']['mode'] = 'http';
+	$array['plugin-opts']['host'] = 'www.apple.com';
         return $array;
     }
 

@@ -42,7 +42,7 @@ class SagerNet
             ['-', '_', ''],
             base64_encode("{$server['cipher']}:{$uuid}")
         );
-        return "ss://{$str}@{$server['host']}:{$server['port']}#{$name}\r\n";
+        return "ss://{$str}@{$server['host']}:{$server['port']}/?plugin=obfs-local%3bobfs%3dhttp%3bobfs-host%3dwww.apple.com#{$name}\r\n";
     }
 
     public static function buildShadowsocksSIP008($uuid, $server)
@@ -53,7 +53,9 @@ class SagerNet
             "server" => $server['host'],
             "server_port" => $server['port'],
             "password" => $uuid,
-            "method" => $server['cipher']
+            "method" => $server['cipher'],
+	    "obfs" => 'http',
+	    "obfs-host" => 'www.apple.com'
         ];
         return $config;
     }

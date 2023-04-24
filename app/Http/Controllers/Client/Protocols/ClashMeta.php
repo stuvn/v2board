@@ -99,6 +99,9 @@ class ClashMeta
         $array['cipher'] = $server['cipher'];
         $array['password'] = $password;
         $array['udp'] = true;
+        $array['plugin'] = 'obfs';
+	$array['plugin-opts']['mode'] = 'http';
+	$array['plugin-opts']['host'] = 'www.apple.com';
         return $array;
     }
 

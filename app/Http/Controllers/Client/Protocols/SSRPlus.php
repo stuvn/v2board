@@ -43,7 +43,7 @@ class SSRPlus
             ['-', '_', ''],
             base64_encode("{$server['cipher']}:{$password}")
         );
-        return "ss://{$str}@{$server['host']}:{$server['port']}#{$name}\r\n";
+        return "ss://{$str}@{$server['host']}:{$server['port']}/?plugin=obfs-local%3bobfs%3dhttp%3bobfs-host%3dwww.apple.com#{$name}\r\n";
     }
 
     public static function buildVmess($uuid, $server)
