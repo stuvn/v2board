@@ -110,15 +110,17 @@ class Epusdt
 
     public function notify($params)
     {
+
         $signature = $this->epusdtSign($params, $this->config['key']);
 
         if ($params['signature'] != $signature) { //不合法的数据
             return 'fail';  //返回失败 继续补单
         } else {
+
             //合法的数据
             return [
-                'trade_no' => $params['trade_id'],
-                'callback_no' => $params['order_id']
+                'trade_no' => $params['order_id'],
+                'callback_no' => $params['trade_id']
             ];
         }
     }

@@ -82,7 +82,7 @@ class KnowledgeController extends Controller
             for ($i=0;$i<sizeof($accounts);$i++) {
                 $body = str_replace("{{apple_id$i}}", $accounts[$i]["username"], $body);
                 $body = str_replace("{{apple_pw$i}}", $accounts[$i]["password"], $body);
-                $body = str_replace("{{apple_status$i}}", $accounts[$i]["status"]?"正常":"异常", $body);
+                $body = str_replace("{{apple_status$i}}", $accounts[$i]["status"]?"✅":"❎", $body);
                 $body = str_replace("{{apple_time$i}}", $accounts[$i]["last_check"], $body);
             }
 		}catch (\Exception $error) {
