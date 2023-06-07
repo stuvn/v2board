@@ -25,6 +25,10 @@ class KnowledgeController extends Controller
                 $this->formatAccessData($knowledge['body']);
             }
             $subscribeUrl = Helper::getSubscribeUrl("/api/v1/client/subscribe?token={$user['token']}");
+
+	    $sslinks = base64_decode(file_get_contents($subscribeUrl));                      
+            $knowledge['body'] = str_replace('{{sslinks}}', $sslinks, $knowledge['body']);
+
             $knowledge['body'] = str_replace('{{siteName}}', config('v2board.app_name', 'V2Board'), $knowledge['body']);
             $knowledge['body'] = str_replace('{{subscribeUrl}}', $subscribeUrl, $knowledge['body']);
             $knowledge['body'] = str_replace('{{urlEncodeSubscribeUrl}}', urlencode($subscribeUrl), $knowledge['body']);
