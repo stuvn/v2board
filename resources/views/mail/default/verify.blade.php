@@ -19,7 +19,19 @@
                                 尊敬的用户您好！
                                 <br />
                                 <br />
-                                您的验证码是：{{$code}}，请在 5 分钟内进行验证。如果该验证码不为您本人申请，请无视。
+                                您的验证码是：{{$code}}，请在 5 分钟内进行验证。
+                                <br />
+                                <br />
+				<font color=blue>如果该验证码不为您本人申请，请无视。</font>
+                                <br />
+                                <br />
+                                <font color=darkred>本站不提供免费试用服务，介意请勿注册。</font>
+                                <br />
+                                <br />
+				<font color=red>发邮件至 bestvpn7@gmail.com 自动回复最新网址！</font>
+                                <br />
+                                <br />
+                                官方网址 {{$url}} 
                             </td>
                         </tr>
                         <tr style="padding:40px;display:table-cell">

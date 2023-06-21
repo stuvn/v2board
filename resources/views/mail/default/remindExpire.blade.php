@@ -20,6 +20,15 @@
                                 <br />
                                 <br />
                                 你的服务将在24小时内到期。为了不造成使用上的影响请尽快续费。如果你已续费请忽略此邮件。
+                                <br />
+                                <br />
+                                <font color=red>过期后可能需要退出或关掉VPN才能登陆网站续费，或用手机登陆网站续费！</font>
+                                <br />
+                                <br />
+				<font color=blue>发邮件至 bestvpn7@gmail.com 自动回复最新网址！</font>
+                                <br />
+                                <br />
+                                官方网址 {{$url}} 
                             </td>
                         </tr>
                         <tr style="padding:40px;display:table-cell">
