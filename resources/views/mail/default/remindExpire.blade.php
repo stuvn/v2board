@@ -25,7 +25,10 @@
                                 为了不造成使用上的影响请尽快续费。如果你已续费请忽略此邮件。
                                 <br />
                                 <br />
-                                <font color=red>过期后可能需要退出或关掉VPN才能登陆网站续费，或用手机登陆网站续费！</font>
+                                <font color=red><b>请选择和原来相同的套餐续费，或登陆网站首页-->点击 续费订阅（在网页底部）</b></font>
+                                <br />
+                                <br />
+                                <font color=red><b>过期后可能需要退出或关掉VPN才能登陆网站续费，或用手机(4G)登陆网站续费！</b></font>
                                 <br />
                                 <br />
 				<font color=blue>发邮件至 bestvpn7@gmail.com 自动回复最新网址！</font>
