@@ -22,7 +22,7 @@
                                 你的流量已经使用80%。为了不造成使用上的影响请合理安排流量的使用。
                                 <br />
                                 <br />
-                                <font color=red>超流量后可能需要退出或关掉VPN才能登陆网站续费，或用手机登陆网站续费！</font>
+                                <font color=red>超流量后可能需要退出或关掉VPN才能登陆网站续费，或用手机(4G)登陆网站续费！</font>
                                 <br />
                                 <br />
 				<font color=blue>发邮件至 bestvpn7@gmail.com 自动回复最新网址！</font>
