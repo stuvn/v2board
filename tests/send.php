@@ -5,7 +5,7 @@
 	require_once('Net/SMTP.php'); 
 	header("content-Type: text/html; charset=Utf-8"); 
 
-	$domain = "shas.top";								//网站地址
+	$domain = "bewk.top";								//网站地址
 	
 	switch ($domain) {
 		case "bewk.top":
