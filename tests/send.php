@@ -8,6 +8,20 @@
 	$domain = "bewk.top";								//网站地址
 	
 	switch ($domain) {
+        case "hoor.top":
+			$name = "虎头加速器";
+			$pswd = "esrstkgxtbiltfdg";
+			$surl = "https://".$domain;
+			$burl = "https://www.xyzd.men";
+			$mail = "bestvpn4@gmail.com";
+     	    break;
+		case "shas.top":
+			$name = "鲨鱼加速器";
+			$pswd = "esrstkgxtbiltfdg";
+            $surl = "https://".$domain;
+            $burl = "https://www.xyzk.men";
+            $mail = "bestvpn4@gmail.com";
+            break;
 		case "bewk.top":
 			$name = "贝壳加速器";
 			$pswd = "bljytfbavcmhdsfw";
