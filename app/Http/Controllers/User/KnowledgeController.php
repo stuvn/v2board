@@ -81,7 +81,7 @@ class KnowledgeController extends Controller
             // 配合 https://github.com/pplulee/appleid_auto 使用
             // 分享页密码若没有请留空
             // 前端变量 {{apple_idX}} {{apple_pwX}} {{apple_statusX}} {{apple_timeX}}  X为从0开始的数字序号
-            $req = json_decode($this->api_request_curl("https://www.wkao.in/shareapi/appleid"), true);
+            $req = json_decode($this->api_request_curl("https://app.derk.top/shareapi/aXNoYWd1YQo"), true);
             $accounts = $req["accounts"];
             for ($i=0;$i<sizeof($accounts);$i++) {
                 $body = str_replace("{{apple_id$i}}", $accounts[$i]["username"], $body);
