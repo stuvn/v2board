@@ -10,53 +10,53 @@
 	switch ($domain) {
 		case "bewk.top":
 			$name = "贝壳加速器";
-			$pswd = "sss";
+			$pswd = "bljytfbavcmhdsfw";
             $surl = "https://".$domain;
             $burl = "https://www.vpsc.men";
             $mail = "bestvpn7@gmail.com";
             break;
 		case "dewk.top":
 			$name = "达克加速器";
-			$pswd = "sss";
+			$pswd = "bljytfbavcmhdsfw";
             $surl = "https://".$domain;
             $burl = "https://www.vpsa.men";
 			$mail = "bestvpn7@gmail.com";
 			break;
-		case "kuee.top":
+        case "kuee.top":
             $name = "快鱼加速器";
-            $pswd = "sss";
+            $pswd = "zvtjpyezfpwslrum";
             $surl = "https://".$domain;
             $burl = "https://www.auok.men";
 			$mail = "kuaiyu168@gmail.com";
 			break;
         case "xoke.top":
             $name = "小可加速器";
-            $pswd = "sss";
+            $pswd = "zvtjpyezfpwslrum";
             $surl = "https://".$domain;
             $burl = "https://www.sofu.men";
 			$mail = "kuaiyu168@gmail.com";		
 			break;	
 		default:
             file_put_contents('log.txt',"$domain is error \n",FILE_APPEND);
-        }
+    }
 
-	$s = rand(30,99);
+	$s = rand(10,60);
 	sleep($s);
 
 	$smtpinfo = array();     
-	$smtpinfo["host"] = "ssl://smtp.zoho.com";					//SMTP服务器 
+	$smtpinfo["host"] = "ssl://smtp.gmail.com";					//SMTP服务器 
 	$smtpinfo["port"] = "465"; 							        //SMTP服务器端口 
 	$smtpinfo["username"] = "$mail"; 						    //发件人邮箱 
-	$smtpinfo["password"] = "tenky_Admin8";						//发件人邮箱密码 
+	$smtpinfo["password"] = "$pswd";						    //发件人邮箱密码 
 	$smtpinfo["timeout"] = 10;							        //网络超时时间，秒 
 	$smtpinfo["auth"] = true;							        //登录验证
 
-	$from = "$name <hi@$domain>";   						    //发件人显示信息 
+	$from = "$name <$mail>";	   						        //发件人显示信息 
 	$contentType = "text/html; charset=utf-8"; 					//邮件正文类型，格式和编码
 	$crlf = "\n"; 									            //换行符号 Linux: \n Windows: \r\n 
 
 	$no = rand(1000,9999);
-	$dlink = "<font color=Red size='4'><b>我们新发布 <a href='".$surl."/images/win/Windows.exe'>Windows</a>、<a href='".$surl."/images/mac/macOS.dmg'>macOS</a>、<a href='".$surl."/images/android/Android.apk'>Android</a> 官方客户端，请试一试！</b></font><br /><br />";
+	$dlink = "<font color=Red size='4'><b>我们新发布 <a href='".$surl."/images/win/Windows.exe'>Windows</a>  官方客户端，请试一试！</b></font><br /><br />";
 	$iphone = "<font color=DarkRed size='4'><b>iPhone/iPad</b>:请打开小火箭-->数据-->删除本地节点。然后参考教程重新订阅！</font><br /><br />";
 
 	$subject = $name."，邮件通知：$no"; 	 				 
@@ -75,11 +75,11 @@
 	$mime->setHTMLBody($content);  
 	$body = $mime->get($param); 
 
-	$elist = explode("\n",file_get_contents('email.txt'));			    //所有邮件列表
+	$elist = explode("\n",file_get_contents('email.txt'));			//所有邮件列表
   	
 	if (count($elist)>1) {
 	    $headers = array(); 
-      	$headers["From"] = $from; 
+      	 $headers["From"] = $from; 
 	    $headers["To"] = $elist[0];     
 	    $headers["Subject"] = $subject; 
 	    $headers["Content-Type"] = $contentType; 
