@@ -26,8 +26,11 @@ class KnowledgeController extends Controller
             }
             $subscribeUrl = Helper::getSubscribeUrl("/api/v1/client/subscribe?token={$user['token']}");
 
-	    $sslinks = base64_decode(file_get_contents($subscribeUrl));                      
+	    $sslinks = base64_decode(file_get_contents($subscribeUrl)); 
+	    $siteUrl = Helper::getSubscribeUrl("");   
+                     
             $knowledge['body'] = str_replace('{{sslinks}}', $sslinks, $knowledge['body']);
+            $knowledge['body'] = str_replace('{{siteUrl}}', $siteUrl, $knowledge['body']);
 
             $knowledge['body'] = str_replace('{{siteName}}', config('v2board.app_name', 'V2Board'), $knowledge['body']);
             $knowledge['body'] = str_replace('{{subscribeUrl}}', $subscribeUrl, $knowledge['body']);
@@ -77,7 +80,7 @@ class KnowledgeController extends Controller
     }
     private function apple(&$body)
     {
-		try{
+	try{
             // 配合 https://github.com/pplulee/appleid_auto 使用
             // 分享页密码若没有请留空
             // 前端变量 {{apple_idX}} {{apple_pwX}} {{apple_statusX}} {{apple_timeX}}  X为从0开始的数字序号
@@ -89,7 +92,7 @@ class KnowledgeController extends Controller
                 $body = str_replace("{{apple_status$i}}", $accounts[$i]["status"]?"✅":"❎", $body);
                 $body = str_replace("{{apple_time$i}}", $accounts[$i]["last_check"], $body);
             }
-		}catch (\Exception $error) {
+	}catch (\Exception $error) {
            for ($i=0;$i<10;$i++) {
                 $body = str_replace("{{apple_id$i}}", "获取失败", $body);
                 $body = str_replace("{{apple_pw$i}}", "获取失败", $body);
