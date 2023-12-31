@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="社会主义核心价值观">
+    <title>点击进入</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #login-image {
+            border-radius: 50%; /* 圆角处理 */
+        }
+
+        #login-link {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p id="quote"></p>
+
+        <script>
+            // 马克思主义名言数组
+            var quotes = [
+		"劳动使人自由\n\n 劳动是创新和创造的基石。",
+                "共产主义是人类文明的灯塔 \n\n同时也是人类历史上最伟大的事业。",
+                "在共产主义社会里 \n\n每个人的自由发展是大家的自由发展。",
+                "资本主义是邪恶的 \n\n资本主义是一切过去社会的掘墓人。",
+                "社会主义不是平均主义 \n\n而是千差万别、百花齐放的发展。",
+                "在共产主义社会中 \n\n谁都不能够为自己独占，而要为全社会服务。",
+            ];
+
+            // 随机选择一条名言显示
+            var randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+        </script>
+
+	<a id="login-link" href="./index.php">
+            <img id="login-image" src="login.png" width=128px; alt="点击进入">
+        </a>
+    </div>
+</body>
+</html>
